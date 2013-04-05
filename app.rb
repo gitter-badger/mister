@@ -10,13 +10,10 @@ configure do
 end
 
 get '/' do 
-	d = redis.get 'day'
-	@message = "Acorta una url"
 	erb :new
 end
 
 post '/' do
-	@message = "Url acortada"
 	@shortened = params[:key]
 	@url = params[:url]
 	redis.set 'urls:' + @shortened, params[:url]
@@ -24,6 +21,5 @@ post '/' do
 end
 
 get '/:shortened' do
-	url = redis.get 'urls:' + params[:shortened]
-	redirect url
+	redirect redis.get 'urls:' + params[:shortened] 
 end

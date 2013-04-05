@@ -1,9 +1,9 @@
 <form method = "post" action = "/" >
-	<input type = "text" id = "url" name = "url" value = "<%= @url || 'url' %>">
-	<input type = "text" id = "key" name = "key" value = "<%= @shortened || 'key' %>">
+	<input type = "text" id = "url" name = "url" placeholder = "ejm : <%= @url || 'http://url.com' %>"><br>
+	<input type = "text" id = "key" name = "key" placeholder = "ejm : <%= @shortened || 'key' %>"><br>
 	<input type = "submit" value = "aplica">
 </form>
 
 <% if @shortened %>
-	<p>La url fue acortada a : <a href="/<%= @shortened %>" target="_blank"> <%= @shortened %> </a></p>
+	<p>La <a href="<%=@url %>">url</a> fue acortada a : <a href="/<%= @shortened %>" target="_blank"> <%= @shortened %></a></p>
 <% end%>
