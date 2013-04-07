@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
-	<title>Mister</title>
+	<link rel="stylesheet" type="text/css" href="app.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+	<title><%= "Mister" %></title>
 </head>
 <body>
-	<h1>Acorta una URL</h1>
+	<h2><%= @message %></h2>
 	<%= yield %>
 </body>
 </html>

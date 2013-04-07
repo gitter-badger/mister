@@ -1,0 +1,8 @@
+<form method = "post" action = "/a/signin" >
+	<input type="email" id="email" name="email" placeholder="email@dot.com" required><br>
+	<input type="password" id="pass" name="pass" placeholder="password" required><br>
+	<input type="submit" value="Iniciar sesion">
+</form>
+<p><a href="/a/signup">Registrarse</a></p>
+
+<%= session[:message] %>

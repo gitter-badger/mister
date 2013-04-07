@@ -1,9 +1,13 @@
-<form method = "post" action = "/" >
-	<input type = "text" id = "url" name = "url" placeholder = "ejm : <%= @url || 'http://url.com' %>"><br>
-	<input type = "text" id = "key" name = "key" placeholder = "ejm : <%= @shortened || 'key' %>"><br>
-	<input type = "submit" value = "aplica">
+<p>Bienvendio <%= session[:email] %></p>
+<p>Acortador de URLs <a href="/a/logout">(Salir)</a></p>
+<form method = "post" action = "/new" >
+	<input type="url" id="url" name="url" placeholder="ejm : http://url.com" required><br>
+	<input type="text" ng-model="key" id="key" name="key" placeholder="ejm : key" required><br>
+	<input type="submit" value="Acorta">
 </form>
 
-<% if @shortened %>
-	<p>La <a href="<%=@url %>">url</a> fue acortada a : <a href="/<%= @shortened %>" target="_blank"> <%= @shortened %></a></p>
-<% end%>
+<p>La url generada sera <span>http://stark-woodland-8893.herokuapp.com/{{key}}</span></p>
+
+<%= @total if session[:keys].count %>
+<h2><%= @errors %></h2>
+
